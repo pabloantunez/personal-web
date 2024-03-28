@@ -16,13 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import home
+from core.views import home, about
 from portfolio.urls import portfolio_patterns 
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+    path('about-me/', about, name='about'),
     path('portfolio/', include(portfolio_patterns)),
 ]
 

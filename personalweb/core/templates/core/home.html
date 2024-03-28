@@ -13,13 +13,13 @@ Home
 <div class="w-100 d-flex justify-content-center align-items-center mt-5">
     <div class="w-50 d-flex flex-wrap">
         <div class="w-50" style="height:400px; padding:7px;">
-            <a href="#" class="position-relative w-100 ">
+            <a href="{% url 'about' %}" class="position-relative w-100 ">
                 <img src="{% static about_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">About Me</div> 
             </a>
         </div>
         <div class="w-50" style="height:400px; padding:7px">
-            <a href="#" class="position-relative w-100 ">
+            <a href="{% url 'projects:projects' %}" class="position-relative w-100 ">
                 <img src="{% static portfolio_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Portfolio</div> 
             </a>

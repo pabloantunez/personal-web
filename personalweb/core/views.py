@@ -13,4 +13,11 @@ def home(request):
         }
     return render(request,'core/home.html', context)
 
+def about(request):
+    context = {
+        'profile_image':'core/images/Me2.jpg'
+    } 
+    return render(request,'core/about-me.html', context)
+
+
 

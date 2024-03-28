@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row g-5 mt-2">
+    <div class="col-lg-5 col-md-4 offset-lg-1 d-flex justify-content-center align-items-center">
+        <img src="{% static profile_image %}" class="img-fluid rounded-circle" style="max-width: 55%; border: 2px solid #fff;" alt="Pablo Antúnez">
+        {% comment %} <img class="img-fluid rounded" src="{% static profile_image %}" alt="Pablo Antúnez"> {% endcomment %}
+    </div>
+    <div class="col-lg-5 col-md-8 d-flex flex-column justify-content-center">
+        <h1>Pablo Germán Antúnez</h1>
+        <h3>University Technician In Web Development</h3>
+        <p>Hi there, thank you for visiting my site. Born in Buenos Aires, Argentina, I'm a graduate from the National University of La Matanza, specializing in web development. Passionate about lifelong learning, I'm also an avid sports enthusiast.</p>
+    </div>
+</div>
+{% endblock%}

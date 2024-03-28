@@ -16,45 +16,48 @@
     <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
     <title>{% block title%}{% endblock%} | Pablo Antúnez</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Posible <div> aca -->
-        <a class="navbar-brand mr-auto" href="/">Pablo Antúnez</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- cierre del <div> -->
-        <div class="collapse navbar-collapse w-100" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'projects:projects' %}">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Certifications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
-    {% if not is_project_view %}
-    {% block image %}
-        <section class="image-section position-relative w-100 ">
-            <img src="{{ image }}" alt="{{ image_description }}" style="width: 100%; max-height: 500px; display: block; object-fit: cover; object-position: center;">
-            <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-4 fw-bolder">{% block image-overlay %}{% endblock %}</div>
-        </section>
-    {% endblock %}
-    {% endif%}
-    
-    {% block content%}
-    {% endblock%}
-    
+<body class="min-vh-100 d-flex flex-column justify-content-between">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="w-100 px-3">
+                <a class="navbar-brand mr-auto" href="/">Pablo Antúnez</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100 d-flex justify-content-end px-3" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-me/">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portfolio/">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% if not is_project_view %}
+        {% block image %}
+            <section class="image-section position-relative w-100 ">
+                <img src="{{ image }}" alt="{{ image_description }}" style="width: 100%; max-height: 500px; display: block; object-fit: cover; object-position: center;">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-4 fw-bolder">{% block image-overlay %}{% endblock %}</div>
+            </section>
+        {% endblock %}
+        {% endif%}
+        
+        {% block content%}
+        {% endblock%}
+    </main>
 
     <footer class="footer bg-dark text-white mt-5">
         <div class="container">
@@ -68,7 +71,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <p class="mb-0">&copy; 2024 Nombre de tu empresa</p>
+                    <p class="mb-0">&copy; 2024 - Pablo Germán Antúnez</p>
                 </div>
             </div>
         </div>
