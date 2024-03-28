@@ -1,0 +1,24 @@
+{% extends 'core/base.html'%}
+
+{% block title%}Portfolio{% endblock%}
+{% load static %}
+{% block image-overlay %}
+    <h1 style="font-size: 65px;">{{ overlay_text }}</h1>
+{% endblock %}
+
+{% block content%}
+    {% for project in projects%}
+        <div class="row project g-5">  	
+            <div class="col-lg-5 col-md-4 offset-lg-1 d-flex justify-content-center align-items-center">
+                <img class="img-fluid rounded" src="{{project.image.url}}" alt="">
+            </div>
+            <div class="col-lg-5 col-md-8 d-flex flex-column justify-content-center">
+                <h2 class="section-heading title">{{project.title}}</h2>   
+                <p>{{project.content|truncatechars:100}}</p>
+                {% if project.url %}
+                    <p><a href="{% url 'projects:project' project.id project.title|slugify %}">More information</a></p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{%endblock%}

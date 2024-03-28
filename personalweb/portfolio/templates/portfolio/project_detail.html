@@ -1,0 +1,16 @@
+{% extends 'core/base.html'%}
+{% block content%}
+<div class="row project g-5 mt-2">
+    <div class="col-lg-5 col-md-4 offset-lg-1 d-flex justify-content-center align-items-center">
+        <img class="img-fluid rounded" src="{{project.image.url}}" alt="">
+    </div>
+    <div class="col-lg-5 col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="section-heading title">{{project.title}}</h2>   
+        <p>{{project.content}}</p>
+        {% if project.url %}
+            <p><a href="{{ project.url }}" target="_blank">See repository</a></p>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

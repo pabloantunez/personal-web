@@ -5,51 +5,37 @@
 Home
 {% endblock%}
 
-{% block image%}
-<section class="image-section">
-    <img src="{% static image_root %}" alt="Front image" style="width: 100%;max-height: 500px; display: block;">
-</section>
-{% endblock%}
+{% block image-overlay %}
+    <h1 style="font-size: 65px;">{{ overlay_text }}</h1>
+{% endblock %}
 
 {% block content%}
-<link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <div class="card mb-4 position-relative">
-                <img src="{% static about_image %}" alt="About Me" class="card-img-top rounded-3 grayscale-opacity">
-                <div class="card-title-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                    <a href=# class="text-white">About Me</a>
-                </div>
-            </div>
+<div class="w-100 d-flex justify-content-center align-items-center mt-5">
+    <div class="w-50 d-flex flex-wrap">
+        <div class="w-50" style="height:400px; padding:7px;">
+            <a href="#" class="position-relative w-100 ">
+                <img src="{% static about_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">About Me</div> 
+            </a>
         </div>
-        <div class="col-md-5">
-            <div class="card mb-4 position-relative">
-                <img src="{% static portfolio_image %}" alt="Portfolio" class="card-img-top rounded-3 grayscale-opacity">
-                <div class="card-title-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                    <a href=# class="text-white">Portfolio</a>
-                </div>
-            </div>
+        <div class="w-50" style="height:400px; padding:7px">
+            <a href="#" class="position-relative w-100 ">
+                <img src="{% static portfolio_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Portfolio</div> 
+            </a>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card mb-4 position-relative">
-                <img src="{% static certifications_image %}" alt="Certifications" class="card-img-top rounded-3 grayscale-opacity">
-                <div class="card-title-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                    <a href=# class="text-white">Certifications</a>
-                </div>
-            </div>
+        <div class="w-50" style="height:400px; padding:7px">
+            <a href="#" class="position-relative w-100 ">
+                <img src="{% static certifications_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Certifications</div> 
+            </a>
         </div>
-        <div class="col-md-5">
-            <div class="card mb-4 position-relative">
-                <img src="{% static contact_image %}" alt="Contact" class="card-img-top rounded-3 grayscale-opacity">
-                <div class="card-title-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                    <a href=# class="text-white">Contact</a>
-                </div>
-            </div>
+        <div class="w-50" style="height:400px; padding:7px">
+            <a href="#" class="position-relative w-100 ">
+                <img src="{% static contact_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Contact</div> 
+            </a>
         </div>
     </div>
 </div>
-
 {% endblock%}
