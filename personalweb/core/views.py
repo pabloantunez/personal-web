@@ -19,5 +19,10 @@ def about(request):
     } 
     return render(request,'core/about-me.html', context)
 
-
+def contact(request):
+    context = {
+        'is_contact_view':True,
+        'contact_image_view':'core/images/Telephones.jpg'
+    }
+    return render(request,'core/contact.html', context)
 
