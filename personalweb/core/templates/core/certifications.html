@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static%}
+{% block title%}Certifications{% endblock%}
+{% block content %}
+    <div style="max-height:100vh;">
+        <img src="{% static certification_image_view %}" class="img-fluid grayscale-opacity" alt="Image Certification">
+    </div>
+    
+{% endblock %}
+
+
+    {% comment %} <div class="container-fluid" id="contenedor-3">
+        <div class="row" style="height: 100%;" id="contenedor-0">
+            <div class="col-md-6 px-0" style="width: 300px; height: 200px; border: 1px solid black; overflow: hidden;" id="contenedor-1">
+                <div class="background-image-container position-relative" style="width: 100%; height: 100%;" id="contenedor-2">
+                    <img src="{% static certification_image_view %}" class="img-fluid grayscale-opacity" style="object-fit: contain; width: 100%; height: 100%;" alt="Image Certification">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Certifications</div> 
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}

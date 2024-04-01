@@ -89,3 +89,11 @@
     color: white;
 }
 
+.nav-selection{
+    color: #1098F7;
+}
+
+.nav-non-selected{
+    font-weight: bold;
+}
+

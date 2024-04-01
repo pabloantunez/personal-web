@@ -5,37 +5,39 @@
 Home
 {% endblock%}
 
-{% block image-overlay %}
-    <h1 style="font-size: 65px;">{{ overlay_text }}</h1>
-{% endblock %}
-
 {% block content%}
-<div class="w-100 d-flex justify-content-center align-items-center mt-5">
-    <div class="w-50 d-flex flex-wrap">
-        <div class="w-50" style="height:400px; padding:7px;">
-            <a href="{% url 'about' %}" class="position-relative w-100 ">
-                <img src="{% static about_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">About Me</div> 
-            </a>
+    <section class="image-section position-relative w-100 ">
+        <img src="{{ image }}" alt="{{ image_description }}" style="width: 100%; max-height: 500px; display: block; object-fit: cover; object-position: center;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-4 fw-bolder">
+            <h1 style="font-size: 65px;">{{ overlay_text }}</h1>
         </div>
-        <div class="w-50" style="height:400px; padding:7px">
-            <a href="{% url 'projects:projects' %}" class="position-relative w-100 ">
-                <img src="{% static portfolio_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Portfolio</div> 
-            </a>
-        </div>
-        <div class="w-50" style="height:400px; padding:7px">
-            <a href="#" class="position-relative w-100 ">
-                <img src="{% static certifications_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Certifications</div> 
-            </a>
-        </div>
-        <div class="w-50" style="height:400px; padding:7px">
-            <a href="{% url 'contact' %}" class="position-relative w-100 ">
-                <img src="{% static contact_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Contact</div> 
-            </a>
+    </section>
+    <div class="w-100 d-flex justify-content-center align-items-center mt-5">
+        <div class="w-50 d-flex flex-wrap">
+            <div class="w-50" style="height:400px; padding:7px;">
+                <a href="{% url 'about' %}" class="position-relative w-100 ">
+                    <img src="{% static about_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">About Me</div> 
+                </a>
+            </div>
+            <div class="w-50" style="height:400px; padding:7px">
+                <a href="{% url 'projects:projects' %}" class="position-relative w-100 ">
+                    <img src="{% static portfolio_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Portfolio</div> 
+                </a>
+            </div>
+            <div class="w-50" style="height:400px; padding:7px">
+                <a href="#" class="position-relative w-100 ">
+                    <img src="{% static certifications_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Certifications</div> 
+                </a>
+            </div>
+            <div class="w-50" style="height:400px; padding:7px">
+                <a href="{% url 'contact' %}" class="position-relative w-100 ">
+                    <img src="{% static contact_image %}" alt="About Me" class="w-100 h-100 grayscale-opacity object-fit-cover">
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-2 fw-bolder">Contact</div> 
+                </a>
+            </div>
         </div>
     </div>
-</div>
 {% endblock%}

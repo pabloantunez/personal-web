@@ -26,3 +26,9 @@ def contact(request):
     }
     return render(request,'core/contact.html', context)
 
+def certification(request):
+    context = {
+        'certification_image_view':'core/images/Books.jpg',
+    }
+    return render(request, 'core/certifications.html',context)
+

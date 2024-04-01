@@ -30,34 +30,25 @@
                 <div class="collapse navbar-collapse w-100 d-flex justify-content-end px-3" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/about-me/">About Me</a>
+                            <a class="nav-link nav-non-selected {% if request.path == '/about-me/' %} nav-selection {% endif %}" href="/about-me/">About Me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/portfolio/">Portfolio</a>
+                            <a class="nav-link nav-non-selected {% if request.path == '/portfolio/' %} nav-selection {% endif %}" href="/portfolio/">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Certifications</a>
+                            <a class="nav-link nav-non-selected {% if request.path == '/certifications/' %} nav-selection {% endif %}" href="/certifications/">Certifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/contact/">Contact</a>
+                            <a class="nav-link nav-non-selected {% if request.path == '/contact/' %} nav-selection {% endif %}" href="/contact/">Contact</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
-            {% if not is_project_view and not is_contact_view%}
-                {% block image %}
-                    <section class="image-section position-relative w-100 ">
-                        <img src="{{ image }}" alt="{{ image_description }}" style="width: 100%; max-height: 500px; display: block; object-fit: cover; object-position: center;">
-                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 fs-4 fw-bolder">{% block image-overlay %}{% endblock %}</div>
-                    </section>
-                {% endblock %}
-            {% endif%}
-
             {% block content%}
             {% endblock%}
-
+            
             {% if is_contact_view %}
                 {% block contact_content %}
                 {% endblock %}
