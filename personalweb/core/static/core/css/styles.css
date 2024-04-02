@@ -51,6 +51,9 @@
     z-index: 2;
 }
 
+.background-general-color{
+    background-color: #F4F5F6;
+}
 .contact-link {
     font-family: 'Raleway', sans-serif !important; 
     color: white !important; 

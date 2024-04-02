@@ -28,7 +28,7 @@ def contact(request):
 
 def certification(request):
     context = {
-        'certification_image_view':'core/images/Books.jpg',
+        'certification_image_view':'core/images/Certification.jpg',
     }
     return render(request, 'core/certifications.html',context)
 

@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static%}
+{% block title%}Certifications{% endblock%}
+{% block content %}
+    <div class="row" style="height: 100vh;">
+        <div class="col grayscale-opacity" style="background-image: url('{{background_image}}'); background-size: cover;"></div>
+        <div class="col d-flex align-items-center background-general-color">
+            <div class="row">
+                {% for certification in object_list %}
+                    <div class="col-md-12 mb-4 mt-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img class="img-fluid rounded" src="{{ certification.image.url }}" alt="" style="max-width: 50%; height: auto;">
+                            </div>
+                            <div class="col-md-8">
+                                <h4>{{ certification.title }}</h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Professor:</strong> {{ certification.professor }}</p>
+                                    </div>
+                                    <div class="col">
+                                        <p><strong>State:</strong><span {% if certification.state == 'in_progress' %}style="color: #C94C39;"{% elif certification.state == 'done' %}style="color: green;"{% endif %}> {{ certification.get_state_display }}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

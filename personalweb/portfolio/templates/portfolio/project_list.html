@@ -1,24 +1,30 @@
 {% extends 'core/base.html'%}
-
 {% block title%}Portfolio{% endblock%}
 {% load static %}
-{% block image-overlay %}
-    <h1 style="font-size: 65px;">{{ overlay_text }}</h1>
-{% endblock %}
 
 {% block content%}
-    {% for project in projects%}
-        <div class="row project g-5 {% if forloop.last %}mb-5{% endif %}">  	
-            <div class="col-lg-5 col-md-4 offset-lg-1 d-flex justify-content-center align-items-center">
-                <img class="img-fluid rounded" src="{{project.image.url}}" alt="">
-            </div>
-            <div class="col-lg-5 col-md-8 d-flex flex-column justify-content-center">
-                <h2 class="section-heading title">{{project.title}}</h2>   
-                <p>{{project.content|truncatechars:100}}</p>
-                {% if project.url %}
-                    <p><a href="{% url 'projects:project' project.id project.title|slugify %}">More information</a></p>
-                {% endif %}
+    <div class="row" style="height: 100vh;">
+        <div class="col grayscale-opacity" style="background-image: url('{{background_image}}'); background-size: cover; background-position: center;"></div>
+        <div class="col d-flex align-items-center background-general-color">
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md-12 mb-4 mt-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img class="img-fluid rounded" src="{{ project.image.url }}" alt="" style="max-width: 50%; height: auto;">
+                            </div>
+                            <div class="col-md-8">
+                                <h4>{{ project.title }}</h4>
+                                <p>{{project.content|truncatechars:100}}</p>
+                                {% if project.url %}
+                                    <p><a href="{% url 'projects:project' project.id project.title|slugify %}">More information</a></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    {% endfor %}
+    </div>
+
 {%endblock%}

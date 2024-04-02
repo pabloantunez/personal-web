@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from core.views import home, about, contact,certification
 from portfolio.urls import portfolio_patterns 
+from certifications.urls import certification_patterns
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('about-me/', about, name='about'),
-    path('certifications/',certification, name='certification'),
+    path('certifications/',include(certification_patterns)),
     path('contact/', contact, name='contact'),
     path('portfolio/', include(portfolio_patterns)),
 ]

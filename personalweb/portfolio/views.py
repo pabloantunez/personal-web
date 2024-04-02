@@ -11,10 +11,8 @@ class PortfolioListView(ListView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context['image'] = '/static/portfolio/images/portfolio_image.jpg'
-        context['projects'] = self.get_queryset() # Obtengo los proyectos
-        context['image_description'] = 'Portfolio Image'
-        context['overlay_text'] = 'Portfolio'
+        context['background_image'] = '/static/portfolio/images/desk_portfolio.jpg'
+        context['projects'] = self.get_queryset()
         return context
 
 class ProjectDetailView(DetailView):
