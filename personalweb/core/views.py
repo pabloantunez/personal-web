@@ -15,7 +15,7 @@ def home(request):
 
 def about(request):
     context = {
-        'profile_image':'core/images/Me2.jpg'
+        'profile_image':'core/images/Profile.png'
     } 
     return render(request,'core/about-me.html', context)
 

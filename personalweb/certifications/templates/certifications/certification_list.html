@@ -5,7 +5,10 @@
     <div class="row" style="height: 100vh;">
         <div class="col grayscale-opacity" style="background-image: url('{{background_image}}'); background-size: cover;"></div>
         <div class="col d-flex align-items-center background-general-color">
-            <div class="row">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h1>Courses I have <span class="list-titles">completed</span> and am <span class="list-titles">currently taking</span></h1>
+                </div>
                 {% for certification in object_list %}
                     <div class="col-md-12 mb-4 mt-5">
                         <div class="row align-items-center">

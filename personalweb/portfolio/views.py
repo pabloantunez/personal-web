@@ -8,12 +8,16 @@ from django.conf import settings
 
 class PortfolioListView(ListView):
     model = Project
+    paginate_by = 3
+    template_name = 'portfolio/project_list.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context['background_image'] = '/static/portfolio/images/desk_portfolio.jpg'
-        context['projects'] = self.get_queryset()
-        return context
+    # def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    #     context = super().get_context_data(**kwargs)
+    #     projects = self.object_list
+    #     print("Proyectos recuperados:", projects)
+    #     context['background_image'] = '/static/portfolio/images/desk_portfolio.jpg'
+    #     context['projects'] = projects
+    #     return context
 
 class ProjectDetailView(DetailView):
     model = Project
